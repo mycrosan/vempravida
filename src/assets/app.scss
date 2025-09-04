@@ -1,0 +1,85 @@
+@import '~bootstrap/scss/bootstrap';
+@import './admin.scss';
+@import './credential.scss';
+@import './photoupload.scss';
+@import './socialbuttons.scss';
+
+body {
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.custom-btn {
+  // border-radius: 10rem;
+  padding: 0.5rem 2.5rem;
+}
+
+// hide scroll bar
+.sidebar-content {
+  -ms-overflow-style: none; // IE 10+
+  overflow: -moz-scrollbars-none; // Firefox
+}
+
+.sidebar-content::-webkit-scrollbar {
+  display: none; // Safari and Chrome
+}
+
+.intro {
+  margin-top: 3rem;
+}
+
+@media (min-width: 992px) {
+
+  .modal-lg, .modal-xl {
+    max-width: 1200px;
+  }
+
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.red {
+  color: $red;
+}
+
+.info {
+  color: $teal;
+}
+
+.orange {
+  color: $orange;
+}
+
+.green {
+  color: $green;
+}
+
+.valid-style-text {
+  font-size: 8px;
+}
+
+@media print {
+  .no-print, .no-print * {
+    display: none !important;
+  }
+}
+
+.up-top-7 {
+  position: relative;
+  top: -7px;
+}
+
+.small-space-xs {
+  padding: 3px;
+}
+
+.print-mode {
+  border-radius: 0px !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}

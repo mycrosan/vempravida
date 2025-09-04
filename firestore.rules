@@ -1,0 +1,16 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+  match /users/{user} {
+      allow read, create: if request.auth.uid != null;
+      allow create, update: if request.auth.uid == get(/databases/$(database)/documents/users/$(request.auth.uid)).data.uid;
+      allow read: if request.auth.token.email == resource.data.email;
+	  allow read, create, write, update: if get(/databases/$(database)/documents/users/$(request.auth.uid)).data.perfil == 'admin';
+    }
+  match /lancamentos/{lancamento} {
+      allow read, write, update: if get(/databases/$(database)/documents/users/$(request.auth.uid)).data.perfil == 'admin';
+    }
+  match /municipios/{municipios} {
+      allow read, create, write, update: if get(/databases/$(database)/documents/users/$(request.auth.uid)).data.perfil == 'admin';
+    }
+  }
+}
